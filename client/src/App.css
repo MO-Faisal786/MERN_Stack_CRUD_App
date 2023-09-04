@@ -1,0 +1,470 @@
+.container{
+    padding: 1rem 9%;
+}
+
+
+/*Navbar design */
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left .navbar-icon{
+    font-size: 3.8rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.right .navbar-ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.right .navbar-ul .nav-item .nav-link{
+    color: #1e1e1e;
+    font-size: 1.7rem;
+    margin-left: 3rem;
+    font-weight: bold;
+}
+
+.right .navbar-ul .nav-item .nav-link:hover{
+    color: #087ee8;
+}
+
+.RN{
+    color: #087ee8;
+}
+
+
+/* Home page design */
+.home-page{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}   
+
+.home-page .home-para{
+    font-size: 3rem;
+    color: #548fc4;
+    font-weight: bold;
+}
+
+.home-page .home-heading{
+    font-size: 4rem;
+    color: #6f757a;
+    font-weight: bold;
+}
+
+/* error page style */
+.notfound{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.notfound .notfound-404{
+    font-size: 20rem;
+    color: #e4e4e4;
+}
+
+.notfound .content{
+    text-align: center;
+    position: absolute;
+}
+
+.notfound .content h2{
+    font-size: 4rem;
+    color: #548fc4
+}
+
+.notfound .content .para{
+    font-size: 2rem;
+    color: #6f757a;
+    font-weight: 500;
+}
+
+
+/* Sign and Sign up in page design */
+.signin{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    margin-top: 6rem;
+}
+
+.signin .form-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    box-shadow: 1rem 1rem 2.5rem #dcdcdc, -1rem -1rem 2.5rem #dcdcdc;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.signin .form-box .signin-image{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.signin .form-box .signin-image img{
+    width: 50rem;
+    height: auto;
+}
+
+
+
+.signin .form-box .signin-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.signin .form-box .signin-form-container .heading .form-tittle{
+    font-size: 4.5rem;
+    color: #2e2e2e;
+    font-weight: bold;
+    padding: 1rem 3rem;
+}
+
+.signin .form-box .signin-form-container .signin-form{
+    padding: 1rem 3rem;
+    /* background-color: red; */
+}
+
+
+.signin .form-box .signin-form-container .signin-form .form-group{
+    font-size: 1.7rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin .form-box .signin-form-container .signin-form .form-group .zmdi{
+    margin-top: 1.3rem;
+    margin-right: 1.5rem;
+    font-size: 2.5rem;
+}
+.signin .form-box .signin-form-container .signin-form .form-group input{
+    border-bottom: 0.2rem solid #2e2e2e;
+    padding: 0.5rem 1rem;
+    padding-left: 0;
+    font-size: 1.5rem;
+    width: 20rem;
+}
+
+.signin .form-box .signin-form-container .signin-form .form-group .signin-image-link{
+    font-size: 1.5rem;
+    text-decoration: underline;
+    padding-top: 3rem;
+}
+
+#Btn{
+    background: #548fc4;
+    border: none;
+    border-radius: .7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    color: #fff;
+}
+
+#Btn:hover{
+    background: #087ee8;
+    border-bottom: 0.2rem solid #2e2e2e;
+}
+
+
+/* Contact Page design  */
+.contact-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+
+.contact-container .upper{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+
+.contact-container .upper .detail-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 15rem;
+    border: 0.1rem solid #e7e7e7;
+    /* box-shadow: 1rem 1rem 2.5rem #dcdcdc, -1rem -1rem 2.5rem #dcdcdc; */
+    padding-left: 2rem;
+}
+
+
+.contact-container .upper .detail-box .detail{
+    color: #2e2e2e;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+
+.contact-container .upper .detail-box .detail .contact_info_tittle{
+    font-weight: bold;
+    margin-left: .5rem;
+    margin-bottom: .3rem;
+}
+
+
+.contact-container .lower{
+    padding: 1.5rem 2.5rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    box-shadow: 1rem 1rem 2.5rem #dcdcdc, -1rem -1rem 2.5rem #dcdcdc;
+}
+
+
+.contact-container .lower .contact_form_heading{
+    font-size: 4.5rem;
+    color: #2e2e2e;
+    font-weight: bold;  
+    margin-bottom: 1.5rem;  
+}
+
+
+
+.contact-container .lower .contact_form_name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.contact-container .lower .contact_form_name .input-field{
+    width: 20rem;
+    height: auto;
+    font-size: 1.5rem;
+    
+}
+
+.contact-container .lower .contact_form_name .input-field input{
+    border: 0.1rem solid #e7e7e7;
+    width: 18rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.contact-container .lower .contact_form_text{
+    font-size: 1.5rem;
+    margin: 2.5rem 0;
+    
+}
+
+.contact-container .lower .contact_form_text textarea{
+    border: 0.1rem solid #e7e7e7;
+    width: 58rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+.contact_form_button {
+    margin-bottom: 2rem;
+}
+
+.contact_form_button .Btn{
+    padding: .7rem;
+    font-size: 1.5rem;
+}
+
+/* About page  */
+.about-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6.5rem;
+}
+
+.about-sub-container{
+    padding: 1.5rem 2.5rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    box-shadow: 1rem 1rem 2.5rem #dcdcdc, -1rem -1rem 2.5rem #dcdcdc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.about-left{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.work-link{
+
+    padding: 1rem 2rem;
+    padding-left: 0;
+}
+
+.about-container .about-sub-container .about-left .work-link .first{
+    color: #b1b1b1;
+}
+
+.work-link p{
+    font-size: 1.5rem;
+    color: #4c4c4c;
+    margin-bottom: 1rem;
+}
+
+
+.about-right{
+    padding: 1rem 2rem;
+    /* background-color: #087ee8; */
+    padding-left: 6rem;
+    width: 48rem;
+    height: 43rem;
+    position: relative;
+}
+
+
+.profile-head{
+    margin-bottom: 8rem;
+
+}
+
+.profile-head h1{
+    font-size: 4rem;
+    color: #2e2e2e;
+    font-weight: bold;
+}
+
+.profile-head h2{
+    font-size: 2rem;
+}
+
+
+.profile-rating{
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+
+.profile-body h2{
+    width: 10rem;
+    font-size: 2rem;
+    font-weight: 500;
+    border-bottom: .2rem solid #548fc4;
+    
+}
+.profile-body-box {
+    width: 40rem;
+    padding-top: 1rem;
+}
+.profile-body-box .row{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.editbtn{
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+}
+
+.bottum-7{
+    float: right;
+    margin-top: 1rem; 
+}
+
+.Btn{
+    background: #548fc4;
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.7rem 1rem;
+    font-size: 1.4rem;
+}
+
+.Btn:hover{
+    background: #087ee8;
+    border-bottom: 0.2rem solid #2e2e2e;
+}
+
+
+/* Edit page  */
+
+.edit-sub-container{
+    box-shadow: 1rem 1rem 2.5rem #dcdcdc, -1rem -1rem 2.5rem #dcdcdc;
+    margin: auto;
+    padding: 1rem 2rem;
+    margin-top: 12rem;
+    padding-top: 3rem;
+    border-radius: 1rem;
+}
+
+
+
+.edit-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.edit-sub-container h1{
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.edit-input-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+ 
+
+}
+
+.edit-input-group label{
+    font-weight: bold ;  
+    color: #548fc4;
+    font-size: 1.5rem;
+}
+
+.edit-input-group input{
+    font-size: 1.3rem;
+    border: 0.1rem solid #e7e7e7;
+    padding: 0.5rem 1rem;
+    width: 30rem;
+    margin-left: 0.7rem;
+}
+
+.edit-input-btn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}

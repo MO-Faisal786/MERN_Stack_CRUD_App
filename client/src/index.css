@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@300;400;500;600&family=Jost:wght@300&family=Karla:wght@300;400;500;600;700&family=Open+Sans:wght@500;600;700&family=Red+Hat+Text:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  font-family: 'Anybody', cursive;
+  font-family: 'Jost', sans-serif;
+  font-family: 'Karla', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+
+html{
+  font-size: 62.5%;
+}
