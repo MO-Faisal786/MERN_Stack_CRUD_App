@@ -17,9 +17,12 @@ const Logout = () => {
             credentials:"include"
         }).then((res)=>{
             dispatch({type:"USER", payload:false})
+            alert("logout succesfull...")
             Navigate('/signin');
         }).catch((error)=>{
-            console.log(error);
+            // console.log(error);
+            alert("logout unsuccesfull...")
+            Navigate('/');
         })
     })
   return (

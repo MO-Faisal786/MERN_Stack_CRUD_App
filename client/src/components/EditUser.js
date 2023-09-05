@@ -25,7 +25,7 @@ const EditUser = () => {
         // console.log(res);
         const data = await res.json();
         // console.log(d ata);       
-        if(!data || res.status !== 200) {
+        if(!data || res.status !== 201) {
             const error = new Error("Unauthorised user");
             throw error;
         }else{
@@ -59,11 +59,11 @@ const updateData = async (e) => {
   })
 
   const data = await res.json();
-  if (!data) {
-    alert("Data not updated...")
-      console.log("Data Not updated..");
+  if (!data || res.status !== 201) {
+    alert(data.message)
+      // console.log("Data Not updated..");
   } else {
-      alert("Profile udated...");
+      alert(data.message);
       Navigate('/about');
   }
 }

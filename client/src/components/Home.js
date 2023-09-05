@@ -23,7 +23,7 @@ const Home = () => {
 
 
         } catch (error) {
-            console.log(error);
+            console.log("This is home page");
         }
     }
 

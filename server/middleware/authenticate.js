@@ -7,7 +7,7 @@ const authenticate = async (req, res, next) => {
         const token = req.cookies.myCookie;
         // console.log(token);
         if (!token) {
-            return res.status(401).json({ error: 'Unauthorized User' });
+            return res.status(401).json({status:401, error: 'Unauthorized User' });
           }
         const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
         const rootUser = await User.findOne({_id:verifyToken._id, "tokens.token": token});

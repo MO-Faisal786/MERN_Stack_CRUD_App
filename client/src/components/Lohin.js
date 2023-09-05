@@ -31,13 +31,10 @@ const Lohin = () => {
 
         if (res.status !== 201 || !data) {
             dispatch({ type: "USER", payload: false })
-            alert("Login not successfull...");
-            console.log(data.error);
+            alert(data.message);
         } else {
             dispatch({ type: "USER", payload: true })
-            alert("login successfull...");
-            console.log(data.message);
-
+            alert(data.message);
             navigate('/');
 
         }

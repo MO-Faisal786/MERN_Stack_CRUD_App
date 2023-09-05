@@ -46,11 +46,10 @@ const Register = () => {
             // console.log(res);
             // console.log(res.status);
 
-            if (res.status === 422 || !data) {
-                alert("Registration unsuccessful...");
-                console.log("no success");
+            if (res.status !== 201 || !data) {
+                alert(data.message);
             } else {
-                alert("Registration successfull...");
+                alert(data.message);
                 console.log("Registration successfull...");
                 navigate('/signin');
             }

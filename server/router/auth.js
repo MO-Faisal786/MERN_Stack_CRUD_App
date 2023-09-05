@@ -20,19 +20,21 @@ router.post('/register', async (req, res) => {
     }
 
     try {
-        const userExist = await User.findOne({ email: email });
-        if (userExist) {
-            return res.status(422).json({ status: 422, error: "email already taken..." });
-        } else if (password !== confirmpassword) {
-            return res.status(422).json({ status: 422, error: "Password are not matching..." });
-        } else {
-            const user = new User({ name, email, phone, work, password, confirmpassword });
-
-            await user.save();
-            res.status(201).json({ status: 201, message: "register successully..." })
+        const userExistbyemail = await User.findOne({ email: email });
+        const userExistbyphone = await User.findOne({ phone: phone });
+        if (userExistbyemail || userExistbyphone) {
+            return res.status(422).json({ status: 422, message: "Email or Phone has already taken..." });
         }
+        if (password !== confirmpassword) {
+            return res.status(422).json({ status: 422, message: "Password are not matching..." });
+        }
+        const user = new User({ name, email, phone, work, password, confirmpassword });
+
+        await user.save();
+        res.status(201).json({ status: 201, message: "register successully..." })
+
     } catch (error) {
-        res.status(409).json({ message: error.message });
+        res.status(409).json({ status: 409, message: error.message });
     }
 });
 
@@ -43,12 +45,12 @@ router.post('/login', async (req, res) => {
 
     try {
         if (!email || !password) {
-            return res.status(422).json({ status: 422, error: "Please fill all fields properly..." });
+            return res.status(422).json({ status: 422, message: "Please fill all fields properly..." });
         }
 
         const user = await User.findOne({ email });
-        if(!user){
-            return   res.status(403).json({error:"User does not exist"});
+        if (!user) {
+            return res.status(403).json({ message: "Invalid credientials..." });
         }
 
         const isMatch = bcrypt.compare(password, user.password);
@@ -70,12 +72,12 @@ router.post('/login', async (req, res) => {
         if (isMatch) {
             res.status(201).json({ message: "Successfully loged in..." });
         } else {
-            res.status(422).json({ status: 422, error: "Invalid email or password..." });
+            res.status(422).json({ status: 422, message: "Invalid email or password..." });
         }
 
 
     } catch (error) {
-        res.status(409).json({ message: error.message });
+        res.status(409).json({ staus: 409, message: error.message });
     }
 
 
@@ -94,7 +96,7 @@ router.post('/contact', authenticate, async (req, res) => {
     try {
         const { name, email, phone, message } = req.body;
         if (!name || !email || !phone || !message) {
-            return res.status(422).json({ status: 422, error: "All field are required" });
+            return res.status(422).json({ status: 422, message: "All field are required" });
         }
 
         const userDetail = await User.findOne({ _id: req.id })
@@ -102,13 +104,15 @@ router.post('/contact', authenticate, async (req, res) => {
         if (userDetail) {
             const messageData = await userDetail.addMessage(name, email, phone, message);
             // console.log(messageData);
-            res.status(201).json({ message: "message send succesfully..." });
+            messageData ?
+                res.status(201).json({ status: 201, message: "message send succesfully..." }) :
+                res.status(403).json({ status: 403, message: "Failed to Send Message" });
         }
 
 
 
     } catch (error) {
-        res.status(409).json({ message: error.message });
+        res.status(409).json({ status: 409, message: error.message });
     }
 });
 
@@ -117,18 +121,18 @@ router.put('/edit/:id', async (req, res) => {
         const id = req.params.id;
         const { name, email, phone, work } = req.body;
         if (!name || !email || !phone || !work) {
-            return res.status(422).json({ status: 422, error: "all fields are require" });
+            return res.status(422).json({ status: 422, message: "all fields are required.." });
         }
         const updatedUserData = { name, email, phone, work };
         const updateResult = await User.updateOne({ _id: id }, updatedUserData, { new: true });
         if (updateResult === null) {
-            return res.status(503).json({ "status": 503, "error": "server is not responding" })
+            return res.status(503).json({ status: 503, message: "server is not responding" })
         } else {
-            res.status(201).json({ status: "201", message: "update successfully" });
+            res.status(201).json({ status: 201, message: "update successfully" });
         };
 
     } catch (error) {
-        res.status(409).json({ message: error.message });
+        res.status(409).json({ error: 409, message: error.message });
     }
 
 })
@@ -141,17 +145,17 @@ router.delete('/delete/:id', async (req, res) => {
         if (!deleteUser) {
             return res.status(503).send("Server Not Responding");
         } else {
-            res.status(201).json({ "status": "201", "message": "deleted Successfully" })
+            res.status(201).json({ status: 201, message: "deleted Successfully" })
         };
     } catch (error) {
-        res.status(409).json({ message: error.message })
+        res.status(409).json({ status: 409, message: error.message })
     }
 })
-   
+
 
 
 router.get('/getdata', authenticate, (req, res) => {
-    res.send(req.rootUser);
+    res.status(201).send(req.rootUser);
 });
 
 

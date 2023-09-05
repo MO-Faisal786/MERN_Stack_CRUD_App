@@ -23,7 +23,7 @@ const Contact = () => {
             // console.log(res);
             const data = await res.json();
             // console.log(data);       
-            if(!data || res.status !== 200) {
+            if(!data || res.status !== 201) {
                 dispatch({type:"USER", payload:false});
                 const error = new Error("Unauthorised user");
                 throw error;
@@ -67,10 +67,11 @@ const Contact = () => {
         })
 
         const data = await res.json();
-        if (!data) {
-            console.log("message Note sent..");
+        if (!data || res.status !== 201) {
+            alert(data.message)
+            // console.log("message Note sent..");
         } else {
-            alert("Message sent...");
+            alert(data.message);
             setUserData({ ...userData, message: "" })
         }
     }

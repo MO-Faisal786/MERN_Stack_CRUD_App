@@ -18,23 +18,19 @@ const DeleteUser = () => {
                 credentials: 'include'
             });
             const data = await res.json();
-            if (!data) {
+            if (!data || res.status !== 201) {
                 dispatch({ type: "USER", payload: true })
                 alert('Account not deleted...');
-                console.log("not deleted");
                 navigate('/about');
             } else {
                 dispatch({ type: "USER", payload: false })
                 alert('Account delete successfull...');
-                console.log("Account delete successfull...");
-                navigate('/logout')
                 navigate('/signup');
             }
 
         } catch (error) {
             dispatch({ type: "USER", payload: true })
             alert('Account not deleted...');
-            console.log(error);
             navigate('/about');
         }
     }
