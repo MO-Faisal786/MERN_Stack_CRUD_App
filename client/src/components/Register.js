@@ -50,11 +50,11 @@ const Register = () => {
                 alert(data.message);
             } else {
                 alert(data.message);
-                console.log("Registration successfull...");
+                // console.log("Registration successfull...");
                 navigate('/signin');
             }
         } catch (error) {
-            console.log(error.message);
+            alert(error.message);
         }
 
     }
